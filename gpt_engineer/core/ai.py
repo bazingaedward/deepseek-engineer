@@ -370,7 +370,11 @@ class AI:
                 callbacks=[StreamingStdOutCallbackHandler()],
                 max_tokens=4096,  # vision models default to low max token limits
             )
+        # elif self.deepseek: 
+        #     # TODO: 添加deepseek的ai沟通模块
+        #     return 'Deepseek'
         else:
+            print(self.model_name, self.temperature, self.streaming, '222')
             return ChatOpenAI(
                 model=self.model_name,
                 temperature=self.temperature,

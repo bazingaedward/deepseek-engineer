@@ -1,0 +1,3 @@
+# Deepseek engineer
+
+借助deepseek和langchain的能力来尝试颠覆传统的软件开发模式，将大语言模型的能力快速转换成生产力，并不断学习进化。
