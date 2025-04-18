@@ -1,7 +1,5 @@
 from langchain_deepseek import ChatDeepSeek
 
-
-
 if __name__ == "__main__":
     llm = ChatDeepSeek(
         model="deepseek-chat",
@@ -11,10 +9,9 @@ if __name__ == "__main__":
         max_retries=2,
     )
     
-    # DeepSeek-R1（通过 指定model="deepseek-reasoner"）不支持工具调用或结构化输出。这些功能由 DeepSeek-V3（通过 指定）支持model="deepseek-chat"。
     messages = [
-        ("system", "You are a helpful translator. Translate the user sentence to French."),
-        ("human", "I love programming."),
+        ("human", "你好，上海幼儿园的平均学费多少, 请用中文回答"),
     ]
     
-    llm.invoke(messages)
+    ai_msg = llm.invoke(messages)
+    print(ai_msg.content, 111)

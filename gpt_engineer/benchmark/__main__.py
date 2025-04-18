@@ -27,9 +27,6 @@ from typing import Annotated, Optional
 
 import typer
 
-from langchain.globals import set_llm_cache
-from langchain_community.cache import SQLiteCache
-
 from gpt_engineer.applications.cli.main import load_env_if_needed
 from gpt_engineer.benchmark.bench_config import BenchConfig
 from gpt_engineer.benchmark.benchmarks.load import get_benchmark
@@ -114,7 +111,8 @@ def main(
     None
     """
     if use_cache:
-        set_llm_cache(SQLiteCache(database_path=".langchain.db"))
+        # set_llm_cache(SQLiteCache(database_path=".langchain.db"))
+        print('cache')
     load_env_if_needed()
     config = BenchConfig.from_toml(bench_config)
     print("using config file: " + bench_config)

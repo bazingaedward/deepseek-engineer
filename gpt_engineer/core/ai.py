@@ -35,7 +35,7 @@ from langchain.schema import (
     messages_from_dict,
     messages_to_dict,
 )
-from langchain_anthropic import ChatAnthropic
+from langchain_deepseek import ChatDeepSeek
 from langchain_openai import AzureChatOpenAI, ChatOpenAI
 
 from gpt_engineer.core.token_usage import TokenUsageLog
@@ -354,13 +354,12 @@ class AI:
                 streaming=self.streaming,
                 callbacks=[StreamingStdOutCallbackHandler()],
             )
-        elif "claude" in self.model_name:
-            return ChatAnthropic(
+        elif "deepseek" in self.model_name:
+            return ChatDeepSeek(
                 model=self.model_name,
                 temperature=self.temperature,
                 callbacks=[StreamingStdOutCallbackHandler()],
                 streaming=self.streaming,
-                max_tokens_to_sample=4096,
             )
         elif self.vision:
             return ChatOpenAI(

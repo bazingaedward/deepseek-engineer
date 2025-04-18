@@ -18,9 +18,7 @@ try:
         get_openai_token_cost_for_model,  # fmt: skip
     )
 except ImportError:
-    from langchain_community.callbacks.openai_info import (
-        get_openai_token_cost_for_model,  # fmt: skip
-    )
+    print(ImportError)
 
 
 Message = Union[AIMessage, HumanMessage, SystemMessage]

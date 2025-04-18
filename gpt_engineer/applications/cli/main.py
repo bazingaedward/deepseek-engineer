@@ -40,7 +40,6 @@ import typer
 
 from dotenv import load_dotenv
 from langchain.globals import set_llm_cache
-from langchain_community.cache import SQLiteCache
 from termcolor import colored
 
 from gpt_engineer.applications.cli.cli_agent import CliAgent
@@ -447,7 +446,8 @@ def main(
     # Set up logging
     logging.basicConfig(level=logging.DEBUG if verbose else logging.INFO)
     if use_cache:
-        set_llm_cache(SQLiteCache(database_path=".langchain.db"))
+        # set_llm_cache(SQLiteCache(database_path=".langchain.db"))
+        print('cache')
     if improve_mode:
         assert not (
             clarify_mode or lite_mode
