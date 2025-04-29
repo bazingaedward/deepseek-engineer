@@ -373,7 +373,6 @@ class AI:
         #     # TODO: 添加deepseek的ai沟通模块
         #     return 'Deepseek'
         else:
-            print(self.model_name, self.temperature, self.streaming, '222')
             return ChatOpenAI(
                 model=self.model_name,
                 temperature=self.temperature,
